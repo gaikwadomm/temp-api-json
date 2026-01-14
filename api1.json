@@ -1,14 +1,16 @@
-[
+{
+  "data": [
     {
-        "label": "omgaikwad(FY | Ai&ds)",
-        "value": "omgaikwad(FY | Ai&ds)"
+      "label": "omgaikwad(FY | Ai&ds)",
+      "value": "omgaikwad(FY | Ai&ds)"
     },
     {
-        "label": "raj(FY | Ai&ds)",
-        "value": "raj(FY | Ai&ds)"
+      "label": "raj(FY | Ai&ds)",
+      "value": "raj(FY | Ai&ds)"
     },
     {
-        "label": "sachin(FY | Ai&ds)",
-        "value": "sachin(FY | Ai&ds)"
+      "label": "sachin(FY | Ai&ds)",
+      "value": "sachin(FY | Ai&ds)"
     }
-]
+  ]
+}
