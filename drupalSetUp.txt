@@ -1,0 +1,136 @@
+This is the critical moment where most new Drupal devs get stuck because XAMPP is built for MySQL, but you need Postgres.
+
+Follow these steps exactly to "wire" your tools together.
+
+Step 1: The "Surgery" (Enable Postgres in PHP)
+Why: By default, XAMPP's PHP ignores Postgres. You must manually enable the connection.
+
+Open XAMPP Control Panel.
+
+Click Config next to Apache, then select PHP (php.ini).
+
+Press Ctrl + F and search for ;extension=pgsql.
+
+Remove the semicolon (;) from the start of these two lines to uncomment them:
+
+Ini, TOML
+
+extension=pdo_pgsql
+extension=pgsql
+Save the file and close it.
+
+Stop and Start Apache in the XAMPP Control Panel to apply changes.
+
+Step 2: Create the Database (Using DBeaver)
+Why: Drupal cannot create the database for itself; you must give it an empty one.
+
+Open DBeaver.
+
+Click the plug icon (New Connection) -> Select PostgreSQL -> Next.
+
+Credentials:
+
+Host: localhost
+
+Database: postgres (default)
+
+User: postgres
+
+Password: (The one you set during Postgres installation).
+
+Click Finish.
+
+In the sidebar, right-click "Databases" -> Create New Database.
+
+Name: drupal_db
+
+Owner: postgres
+
+Click OK. You now have an empty bucket for Drupal.
+
+Step 3: Download Drupal (Using Composer)
+Why: This replaces "downloading a zip file." It creates the standard folder structure.
+
+Open Git Bash.
+
+Navigate to your XAMPP web folder:
+
+Bash
+
+cd /c/xampp/htdocs
+Run the command to download Drupal 9 (or 10/11 depending on your PHP version, but this command gets the recommended stable one):
+
+Bash
+
+composer create-project drupal/recommended-project my_first_site
+(This will take 2-3 minutes. It is downloading Drupal Core + all dependencies).
+
+Step 4: The Installation (Browser)
+Open Chrome/Edge.
+
+Go to: http://localhost/my_first_site/web (Note: You must include /web because that is where the index.php lives).
+
+Choose Language: English.
+
+Choose Profile: Standard.
+
+Database Configuration (Crucial):
+
+Database type: Select PostgreSQL (If you don't see this, Step 1 failed).
+
+Database name: drupal_db
+
+Database username: postgres
+
+Database password: (Your Postgres password).
+
+Advanced Options: Host should be localhost, Port 5432.
+
+Click Save and Continue. Drupal will now install modules.
+
+Step 5: Verify with Drush (The "Developer" Check)
+Why: If you can run Drush, you are officially a Drupal Developer.
+
+Go back to Git Bash.
+
+Enter your site folder:
+
+Bash
+
+cd /c/xampp/htdocs/my_first_site
+Run the status command:
+
+Bash
+
+vendor/bin/drush status
+Success: It will show a table with "Drupal Version," "Database: Connected," and "PHP Version."
+
+Failure: It will say "Command not found" or give a red error.
+
+Summary Checklist
+[ ] php.ini: extension=pdo_pgsql is uncommented.
+
+[ ] DBeaver: drupal_db exists.
+
+[ ] Browser: You can see the Drupal homepage at localhost/my_first_site/web.
+
+[ ] Terminal: drush status shows green text.
+
+What to do next: Once you see the Drupal homepage, do not start clicking random buttons. Reply with "Done", and I will give you your first Coding Task (Creating a module to output JSON) to verify your MERN-to-Drupal connection.
+
+
+Step 1: Set the "Fake ID" (Local Config)
+
+Bash
+
+composer config platform.php 8.1.13
+Step 2: Update dependencies using the Mask
+
+Bash
+
+composer update --no-audit --with-all-dependencies
+Step 3: Install Drush
+
+Bash
+
+composer require drush/drush:^11 --no-audit
