@@ -1,28 +1,68 @@
 {
-    "students": [
-        {
-            "prn": "1"
-        },
-        {
-            "prn": "2"
-        },
-        {
-            "prn": "3"
-        },
-        {
-            "prn": "4"
-        },
-        {
-            "prn": "5"
-        },
-        {
-            "prn": "6"
-        },
-        {
-            "prn": "7"
-        },
-        {
-            "prn": "8"
-        }
-    ]
+  "students": [
+    {
+      "prn": "1",
+      "name": "Om Gaikwad",
+      "branch": "Ai&ds",
+      "year": "FY",
+      "division": "A",
+      "email": "om.gaikwad@example.com"
+    },
+    {
+      "prn": "2",
+      "name": "Raj Patil",
+      "branch": "Ai&ds",
+      "year": "SY",
+      "division": "B",
+      "email": "raj.patil@example.com"
+    },
+    {
+      "prn": "3",
+      "name": "Sachin Deshmukh",
+      "branch": "Ai&ds",
+      "year": "TY",
+      "division": "A",
+      "email": "sachin.d@example.com"
+    },
+    {
+      "prn": "4",
+      "name": "Neha Kulkarni",
+      "branch": "Ai&ds",
+      "year": "B.Tech",
+      "division": "C",
+      "email": "neha.k@example.com"
+    },
+    {
+      "prn": "5",
+      "name": "Amit Sharma",
+      "branch": "Coms",
+      "year": "FY",
+      "division": "A",
+      "email": "amit.sharma@example.com"
+    },
+    {
+      "prn": "6",
+      "name": "Pooja Mehta",
+      "branch": "Coms",
+      "year": "SY",
+      "division": "B",
+      "email": "pooja.mehta@example.com"
+    },
+    {
+      "prn": "7",
+      "name": "Rohit Verma",
+      "branch": "Coms",
+      "year": "TY",
+      "division": "C",
+      "email": "rohit.verma@example.com"
+    },
+    {
+      "prn": "8",
+      "name": "Sneha Joshi",
+      "branch": "Coms",
+      "year": "B.Tech",
+      "division": "A",
+      "email": "sneha.joshi@example.com"
+    }
+  ]
 }

@@ -1,0 +1,415 @@
+{
+  "form": {
+    "labelCol": 6,
+    "wrapperCol": 12
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "igpbwj2uqg6": {
+        "type": "void",
+        "x-component": "Card",
+        "x-component-props": {
+          "title": ""
+        },
+        "x-designable-id": "igpbwj2uqg6",
+        "x-index": 0,
+        "properties": {
+          "fo2wt61oiw0": {
+            "type": "void",
+            "x-component": "FormGrid",
+            "x-validator": [],
+            "x-component-props": {},
+            "x-designable-id": "fo2wt61oiw0",
+            "x-index": 0,
+            "properties": {
+              "sl58ateuo85": {
+                "type": "void",
+                "x-component": "FormGrid.GridColumn",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-designable-id": "sl58ateuo85",
+                "x-index": 0,
+                "enum": [
+                  {
+                    "children": [],
+                    "label": " Technology",
+                    "value": " Technology"
+                  },
+                  {
+                    "children": [],
+                    "label": " Finance",
+                    "value": " Finance"
+                  },
+                  {
+                    "children": [],
+                    "label": "Marketing",
+                    "value": "Marketing"
+                  }
+                ],
+                "properties": {
+                  "Category": {
+                    "title": "Category",
+                    "x-decorator": "FormItem",
+                    "x-component": "Select",
+                    "x-validator": [],
+                    "x-component-props": {},
+                    "x-decorator-props": {
+                      "colon": false,
+                      "layout": "vertical",
+                      "labelAlign": "left"
+                    },
+                    "name": "Category",
+                    "required": true,
+                    "x-designable-id": "ulbpfx3le7z",
+                    "x-index": 0,
+                    "enum": [
+                      {
+                        "children": [],
+                        "label": "Technology",
+                        "value": "Technology"
+                      },
+                      {
+                        "children": [],
+                        "label": "Finance",
+                        "value": "Finance"
+                      },
+                      {
+                        "children": [],
+                        "label": "Marketing",
+                        "value": "Marketing"
+                      }
+                    ]
+                  }
+                }
+              },
+              "6bj8w15vslx": {
+                "type": "void",
+                "x-component": "FormGrid.GridColumn",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-designable-id": "6bj8w15vslx",
+                "x-index": 1,
+                "properties": {
+                  "Sub-Category": {
+                    "title": "Sub-Category",
+                    "x-decorator": "FormItem",
+                    "x-component": "Select",
+                    "x-validator": [],
+                    "x-component-props": {},
+                    "x-decorator-props": {
+                      "colon": false,
+                      "layout": "vertical",
+                      "labelAlign": "left"
+                    },
+                    "name": "Sub-Category",
+                    "required": true,
+                    "x-designable-id": "8brgrui33yv",
+                    "x-index": 0,
+                    "x-reactions": {
+                      "dependencies": [
+                        {
+                          "property": "value",
+                          "type": "any",
+                          "source": "igpbwj2uqg6.fo2wt61oiw0.sl58ateuo85.Category",
+                          "name": "Category"
+                        }
+                      ],
+                      "fulfill": {
+                        "state": {
+                          "dataSource": "{{$deps.Category===\"Technology\" ? [\r\n  {\r\n    label: \"Frontend\",\r\n    value: \"Frontend\"\r\n  },\r\n  {\r\n    label: \"Backend\",\r\n    value: \"Backend\"\r\n  },\r\n  {\r\n    label: \"Deveops\",\r\n    value: \"Deveops\"\r\n  }\r\n] : $deps.Category===\"Finance\" ? [\r\n    {\r\n    label: \"Accounting\",\r\n    value: \"Accounting\"\r\n  },\r\n    {\r\n    label: \"Investment\",\r\n    value: \"Investment\"\r\n  },\r\n    {\r\n    label: \"Auditing\",\r\n    value: \"Auditing\"\r\n  }\r\n] : $deps.Category===\"Marketing\" ? [\r\n    {\r\n    label: \"SEO\",\r\n    value: \"SEO\"\r\n  },\r\n      {\r\n    label: \"Content Marketing\",\r\n    value: \"Content Marketing\"\r\n  },\r\n      {\r\n    label: \"Performance Marketing\",\r\n    value: \"Performance Marketing\"\r\n  }\r\n] : [{label: \"deafult\", value: \"default\"}]}}"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "zr2bvfzedsw": {
+                "type": "void",
+                "x-component": "FormGrid.GridColumn",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-designable-id": "zr2bvfzedsw",
+                "x-index": 2
+              }
+            }
+          },
+          "ohluhwdypv6": {
+            "type": "void",
+            "x-component": "FormGrid",
+            "x-validator": [],
+            "x-component-props": {},
+            "x-designable-id": "ohluhwdypv6",
+            "x-index": 1,
+            "properties": {
+              "0y8ljjr6ugw": {
+                "type": "void",
+                "x-component": "FormGrid.GridColumn",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-designable-id": "0y8ljjr6ugw",
+                "x-index": 0,
+                "properties": {
+                  "User": {
+                    "title": "User",
+                    "x-decorator": "FormItem",
+                    "x-component": "Select",
+                    "x-validator": [],
+                    "x-component-props": {},
+                    "x-decorator-props": {
+                      "colon": false,
+                      "layout": "vertical",
+                      "labelAlign": "left"
+                    },
+                    "name": "User",
+                    "required": true,
+                    "x-designable-id": "62m06ybdtkb",
+                    "x-index": 0,
+                    "x-reactions": {
+                      "dependencies": [
+                        {
+                          "property": "value",
+                          "type": "any"
+                        }
+                      ],
+                      "fulfill": {
+                        "run": "$effect(()=>{\n  $self.loading = true\n  fetch('https://695e0a762556fd22f6771d30.mockapi.io/api/users/users')\n    .then(response=>response.json())\n    .then(( data )=>{\n      $self.loading = false\n      $self.dataSource = data\n    },()=>{\n      $self.loading = false\n    })\n},[])"
+                      }
+                    }
+                  }
+                }
+              },
+              "cvfobk6z1d5": {
+                "type": "void",
+                "x-component": "FormGrid.GridColumn",
+                "x-designable-id": "cvfobk6z1d5",
+                "x-index": 1
+              },
+              "0wsbw0jl4mq": {
+                "type": "void",
+                "x-component": "FormGrid.GridColumn",
+                "x-designable-id": "0wsbw0jl4mq",
+                "x-index": 2
+              }
+            }
+          },
+          "allocation_type": {
+            "type": "string | number",
+            "title": "Allocation Type",
+            "x-decorator": "FormItem",
+            "x-component": "Radio.Group",
+            "enum": [
+              {
+                "children": [],
+                "label": "Temporary Access",
+                "value": "Temporary Access"
+              },
+              {
+                "children": [],
+                "label": "Permanent Allocation",
+                "value": "Permanent Allocation"
+              }
+            ],
+            "x-validator": [],
+            "x-component-props": {},
+            "x-decorator-props": {
+              "colon": false,
+              "layout": "vertical",
+              "labelAlign": "left"
+            },
+            "name": "allocation_type",
+            "required": true,
+            "x-designable-id": "axh486zbysx",
+            "x-index": 2,
+            "x-reactions": {
+              "dependencies": [
+                {
+                  "property": "value",
+                  "type": "any"
+                }
+              ]
+            },
+            "default": "Temporary Access"
+          },
+          "xqav1zbyj7h": {
+            "type": "void",
+            "x-component": "FormGrid",
+            "x-validator": [],
+            "x-component-props": {},
+            "x-designable-id": "xqav1zbyj7h",
+            "x-index": 3,
+            "x-reactions": {
+              "dependencies": [
+                {
+                  "property": "value",
+                  "type": "any",
+                  "source": "igpbwj2uqg6.allocation_type",
+                  "name": "allocation_type"
+                }
+              ],
+              "fulfill": {
+                "state": {},
+                "run": ""
+              }
+            },
+            "properties": {
+              "09dudu464gt": {
+                "type": "void",
+                "x-component": "FormGrid.GridColumn",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-designable-id": "09dudu464gt",
+                "x-index": 0,
+                "properties": {
+                  "purpose-of-allocation": {
+                    "type": "string",
+                    "title": "Purpose of Allocation",
+                    "x-decorator": "FormItem",
+                    "x-component": "Input",
+                    "x-validator": [],
+                    "x-component-props": {},
+                    "x-decorator-props": {
+                      "colon": false,
+                      "layout": "vertical",
+                      "labelAlign": "left"
+                    },
+                    "name": "purpose-of-allocation",
+                    "x-designable-id": "vkdr9otox3e",
+                    "x-index": 0,
+                    "x-reactions": {
+                      "dependencies": [
+                        {
+                          "property": "value",
+                          "type": "any"
+                        }
+                      ],
+                      "fulfill": {
+                        "state": {}
+                      }
+                    }
+                  }
+                }
+              },
+              "d0ooe72kmii": {
+                "type": "void",
+                "x-component": "FormGrid.GridColumn",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-designable-id": "d0ooe72kmii",
+                "x-index": 1,
+                "properties": {
+                  "allocation-period": {
+                    "type": "string",
+                    "title": "Allocation Period",
+                    "x-decorator": "FormItem",
+                    "x-component": "DatePicker",
+                    "x-validator": [],
+                    "x-component-props": {},
+                    "x-decorator-props": {
+                      "colon": false,
+                      "layout": "vertical",
+                      "labelAlign": "left"
+                    },
+                    "name": "allocation-period",
+                    "x-designable-id": "rji9enjw106",
+                    "x-index": 0,
+                    "x-reactions": {
+                      "dependencies": [
+                        {
+                          "property": "value",
+                          "type": "any"
+                        }
+                      ],
+                      "fulfill": {
+                        "state": {}
+                      }
+                    }
+                  }
+                }
+              },
+              "ybf4nikgaht": {
+                "type": "void",
+                "x-component": "FormGrid.GridColumn",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-designable-id": "ybf4nikgaht",
+                "x-index": 2
+              }
+            }
+          },
+          "required_temporary_assets": {
+            "type": "Array<string | number>",
+            "title": "Required Temporary Assets",
+            "x-decorator": "FormItem",
+            "x-component": "Checkbox.Group",
+            "enum": [
+              {
+                "children": [],
+                "label": "Laptop",
+                "value": "Laptop"
+              },
+              {
+                "children": [],
+                "label": "ID Card",
+                "value": "ID Card"
+              },
+              {
+                "children": [],
+                "label": "VPN Access",
+                "value": "VPN Access"
+              },
+              {
+                "children": [],
+                "label": "Email Access",
+                "value": "Email Access"
+              }
+            ],
+            "x-validator": [],
+            "x-decorator-props": {
+              "layout": "vertical",
+              "labelAlign": "left",
+              "colon": false
+            },
+            "name": "required_temporary_assets",
+            "required": true,
+            "x-designable-id": "t8q8nkp622q",
+            "x-index": 4,
+            "x-reactions": {
+              "dependencies": [
+                {
+                  "property": "value",
+                  "type": "any",
+                  "source": "igpbwj2uqg6.allocation_type",
+                  "name": "allocation_type"
+                }
+              ],
+              "fulfill": {
+                "state": {
+                  "display": "{{ $deps.allocation_type === 'Temporary Access' ? \"visible\" : \"none\"}}"
+                }
+              }
+            }
+          },
+          "Remark": {
+            "type": "string",
+            "title": "Remark",
+            "x-decorator": "FormItem",
+            "x-component": "Input.TextArea",
+            "x-validator": [],
+            "x-component-props": {},
+            "x-decorator-props": {
+              "colon": false,
+              "layout": "vertical",
+              "labelAlign": "left"
+            },
+            "name": "Remark",
+            "required": true,
+            "x-designable-id": "sj7maautsx5",
+            "x-index": 5
+          }
+        }
+      }
+    },
+    "x-designable-id": "5n6edf0gyqp"
+  }
+}
