@@ -1,0 +1,113 @@
+[{
+    "faculty_id": 1,
+    "name": "Faculty A",
+    "departments": [
+        {
+        "department_id": 101,
+        "name": "Department of Physics"
+        },
+        {
+        "department_id": 102,
+        "name": "Department of Chemistry"
+        }
+    ]
+},
+{
+    "faculty_id": 2,
+    "name": "Faculty B",
+    "departments": [
+        {
+        "department_id": 201,
+        "name": "Department of History"
+        },
+        {
+        "department_id": 202,
+        "name": "Department of Literature"
+        }
+    ]
+},
+{
+    "faculty_id": 3,
+    "name": "Faculty C",
+    "departments": [
+        {
+        "department_id": 301,
+        "name": "Department of Mechanical Engineering"
+        },
+        {
+        "department_id": 302,
+        "name": "Department of Electrical Engineering"
+        }
+    ]
+},
+{
+    "faculty_id": 4,
+    "name": "Faculty D",
+    "departments": [
+        {
+        "department_id": 401,
+        "name": "Department of Surgery"
+        },
+        {
+        "department_id": 402,
+        "name": "Department of Pediatrics"
+        }
+    ]
+},
+{
+    "faculty_id": 5,
+    "name": "Faculty E",
+    "departments": [
+        {
+        "department_id": 501,
+        "name": "Department of Marketing"
+        },
+        {
+        "department_id": 502,
+        "name": "Department of Finance"
+        }
+    ]
+},
+{
+    "faculty_id": 6,
+    "name": "Faculty F",
+    "departments": [
+        {
+        "department_id": 601,
+        "name": "Department of Criminal Law"
+        },
+        {
+        "department_id": 602,
+        "name": "Department of Corporate Law"
+        }
+    ]
+},
+{
+    "faculty_id": 7,
+    "name": "Faculty G",
+    "departments": [
+        {
+        "department_id": 701,
+        "name": "Department of Curriculum Studies"
+        },
+        {
+        "department_id": 702,
+        "name": "Department of Educational Psychology"
+        }
+    ]
+},
+{
+    "faculty_id": 8,
+    "name": "Faculty H",
+    "departments": [
+        {
+        "department_id": 801,
+        "name": "Department of Sociology"
+        },
+        {
+        "department_id": 802,
+        "name": "Department of Political Science"
+        }
+    ]
+}
+]

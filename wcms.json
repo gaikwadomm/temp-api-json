@@ -1,0 +1,829 @@
+{
+  "form": {
+    "labelCol": 6,
+    "wrapperCol": 12
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "lb7jgzq87em": {
+        "type": "void",
+        "x-component": "Card",
+        "x-component-props": {
+          "title": ""
+        },
+        "x-designable-id": "lb7jgzq87em",
+        "x-index": 0,
+        "properties": {
+          "75znk4s84vg": {
+            "type": "void",
+            "x-component": "FormGrid",
+            "x-validator": [],
+            "x-component-props": {},
+            "x-designable-id": "75znk4s84vg",
+            "x-index": 0,
+            "properties": {
+              "aowreih5624": {
+                "type": "void",
+                "x-component": "FormGrid.GridColumn",
+                "x-validator": [],
+                "x-component-props": {},
+                "title": "",
+                "x-designable-id": "aowreih5624",
+                "x-index": 0,
+                "properties": {
+                  "year": {
+                    "title": "Year",
+                    "x-decorator": "FormItem",
+                    "x-component": "Select",
+                    "x-validator": [],
+                    "x-component-props": {
+                      "placeholder": "Select Year"
+                    },
+                    "x-decorator-props": {
+                      "colon": false,
+                      "layout": "vertical",
+                      "labelAlign": "left"
+                    },
+                    "required": true,
+                    "name": "year",
+                    "enum": [
+                      {
+                        "children": [],
+                        "label": "FY",
+                        "value": "FY"
+                      },
+                      {
+                        "children": [],
+                        "label": "SY",
+                        "value": "SY"
+                      },
+                      {
+                        "children": [],
+                        "label": "TY",
+                        "value": "TY"
+                      },
+                      {
+                        "children": [],
+                        "label": "B.Tech",
+                        "value": "B.Tech"
+                      }
+                    ],
+                    "x-designable-id": "nd116bydbjg",
+                    "x-index": 0
+                  },
+                  "name": {
+                    "title": "Name",
+                    "x-decorator": "FormItem",
+                    "x-component": "Select",
+                    "x-validator": [],
+                    "x-component-props": {
+                      "placeholder": "Select Name"
+                    },
+                    "x-decorator-props": {
+                      "layout": "vertical",
+                      "labelAlign": "left"
+                    },
+                    "name": "name",
+                    "required": true,
+                    "x-reactions": {
+                      "dependencies": [
+                        {
+                          "property": "value",
+                          "type": "any",
+                          "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.year",
+                          "name": "year"
+                        },
+                        {
+                          "property": "value",
+                          "type": "any",
+                          "source": "lb7jgzq87em.75znk4s84vg.ysmjxdr5zt5.branch",
+                          "name": "branch"
+                        }
+                      ],
+                      "fulfill": {
+                        "state": {
+                          "visible": "{{$deps.year && $deps.branch}}",
+                          "display": "{{($deps.year && $deps.branch) ? \"visible\" : \"none\"}}"
+                        },
+                        "run": "\n$effect(() => {\n  $self.loading = true\n  fetch(\n    `https://raw.githubusercontent.com/gaikwadomm/temp-api-json/main/${$deps.year}_${$deps.branch}.json`\n  )\n    .then((response) => response.json())\n    .then(\n      ({ data }) => {\n        $self.loading = false\n        $self.dataSource = data\n      },\n      () => {\n        $self.loading = false\n      }\n    )\n  console.log(\n    `https://raw.githubusercontent.com/gaikwadomm/temp-api-json/main/${$deps.year}_${$deps.branch}.json`\n  )\n}, [$deps.year, $deps.branch])\n"
+                      }
+                    },
+                    "x-designable-id": "t6lhfhvweun",
+                    "x-index": 1
+                  }
+                }
+              },
+              "ysmjxdr5zt5": {
+                "type": "void",
+                "x-component": "FormGrid.GridColumn",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-designable-id": "ysmjxdr5zt5",
+                "x-index": 1,
+                "properties": {
+                  "branch": {
+                    "title": "Branch",
+                    "x-decorator": "FormItem",
+                    "x-component": "Select",
+                    "x-validator": [],
+                    "x-component-props": {
+                      "placeholder": "Select Branch"
+                    },
+                    "x-decorator-props": {
+                      "labelAlign": "left",
+                      "colon": false,
+                      "layout": "vertical"
+                    },
+                    "required": true,
+                    "name": "branch",
+                    "enum": [
+                      {
+                        "children": [],
+                        "label": "Coms",
+                        "value": "Coms"
+                      },
+                      {
+                        "children": [],
+                        "label": "Ai&ds",
+                        "value": "Ai&ds"
+                      }
+                    ],
+                    "x-designable-id": "zuejha46q92",
+                    "x-index": 0
+                  }
+                }
+              }
+            }
+          },
+          "chd7kv4murw": {
+            "type": "void",
+            "x-component": "Card",
+            "x-component-props": {
+              "title": ""
+            },
+            "x-designable-id": "chd7kv4murw",
+            "x-index": 1,
+            "properties": {
+              "facultyA": {
+                "type": "string | number",
+                "title": "Faculty A",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "Excelent",
+                    "value": "Excelent"
+                  },
+                  {
+                    "children": [],
+                    "label": "Very Good",
+                    "value": "Very Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Good",
+                    "value": "Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Poor",
+                    "value": "Poor"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "margin": "0px 0px 0px 10px"
+                  }
+                },
+                "x-decorator-props": {
+                  "labelAlign": "left",
+                  "layout": "vertical",
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column"
+                  }
+                },
+                "name": "facultyA",
+                "required": true,
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.year",
+                      "name": "year"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.ysmjxdr5zt5.branch",
+                      "name": "branch"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.name",
+                      "name": "name"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.year===\"FY\" && $deps.branch===\"Coms\"}}"
+                    }
+                  }
+                },
+                "x-designable-id": "pazqwd7x1oe",
+                "x-index": 0
+              },
+              "facultyB": {
+                "type": "string | number",
+                "title": "Faculty B",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "Excelent",
+                    "value": "Excelent"
+                  },
+                  {
+                    "children": [],
+                    "label": "Very Good",
+                    "value": "Very Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Good",
+                    "value": "Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Poor",
+                    "value": "Poor"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "margin": "0px 0px 0px 10px"
+                  }
+                },
+                "x-decorator-props": {
+                  "labelAlign": "left",
+                  "layout": "vertical",
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column"
+                  }
+                },
+                "name": "facultyB",
+                "required": true,
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.year",
+                      "name": "year"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.name",
+                      "name": "branch"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.name",
+                      "name": "name"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.year===\"SY\" && $deps.branch===\"Coms\"}}"
+                    }
+                  }
+                },
+                "x-designable-id": "7pt79advf05",
+                "x-index": 1
+              },
+              "facultyC": {
+                "type": "string | number",
+                "title": "Faculty C",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "Excelent",
+                    "value": "Excelent"
+                  },
+                  {
+                    "children": [],
+                    "label": "Very Good",
+                    "value": "Very Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Good",
+                    "value": "Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Poor",
+                    "value": "Poor"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "margin": "0px 0px 0px 10px"
+                  }
+                },
+                "x-decorator-props": {
+                  "labelAlign": "left",
+                  "layout": "vertical",
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column"
+                  }
+                },
+                "name": "facultyC",
+                "required": true,
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.year",
+                      "name": "year"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.ysmjxdr5zt5.branch",
+                      "name": "branch"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.name",
+                      "name": "name"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.year===\"TY\" && $deps.branch===\"Coms\"}}"
+                    }
+                  }
+                },
+                "x-designable-id": "ryt5grc9uu7",
+                "x-index": 2
+              },
+              "facultyD": {
+                "type": "string | number",
+                "title": "Faculty D",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "Excelent",
+                    "value": "Excelent"
+                  },
+                  {
+                    "children": [],
+                    "label": "Very Good",
+                    "value": "Very Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Good",
+                    "value": "Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Poor",
+                    "value": "Poor"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "margin": "0px 0px 0px 10px"
+                  }
+                },
+                "x-decorator-props": {
+                  "labelAlign": "left",
+                  "layout": "vertical",
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column"
+                  }
+                },
+                "name": "facultyD",
+                "required": true,
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.year",
+                      "name": "year"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.ysmjxdr5zt5.branch",
+                      "name": "branch"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.name",
+                      "name": "name"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.year===\"B.Tech\" && $deps.branch===\"Coms\"}}"
+                    }
+                  }
+                },
+                "x-designable-id": "6ravya93a12",
+                "x-index": 3
+              },
+              "facultyE": {
+                "type": "string | number",
+                "title": "Faculty E",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "Excelent",
+                    "value": "Excelent"
+                  },
+                  {
+                    "children": [],
+                    "label": "Very Good",
+                    "value": "Very Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Good",
+                    "value": "Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Poor",
+                    "value": "Poor"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "margin": "0px 0px 0px 10px"
+                  }
+                },
+                "x-decorator-props": {
+                  "labelAlign": "left",
+                  "layout": "vertical",
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column"
+                  }
+                },
+                "name": "facultyE",
+                "required": true,
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.year",
+                      "name": "year"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.ysmjxdr5zt5.branch",
+                      "name": "branch"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.name",
+                      "name": "name"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.year===\"FY\" && $deps.branch===\"Ai&ds\"}}"
+                    }
+                  }
+                },
+                "x-designable-id": "8xarrbig0sb",
+                "x-index": 4
+              },
+              "facultyF": {
+                "type": "string | number",
+                "title": "Faculty F",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "Excelent",
+                    "value": "Excelent"
+                  },
+                  {
+                    "children": [],
+                    "label": "Very Good",
+                    "value": "Very Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Good",
+                    "value": "Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Poor",
+                    "value": "Poor"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "margin": "0px 0px 0px 10px"
+                  }
+                },
+                "x-decorator-props": {
+                  "labelAlign": "left",
+                  "layout": "vertical",
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column"
+                  }
+                },
+                "name": "facultyF",
+                "required": true,
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.year",
+                      "name": "year"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.ysmjxdr5zt5.branch",
+                      "name": "branch"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.name",
+                      "name": "name"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.year===\"SY\" && $deps.branch===\"Ai&ds\"}}"
+                    }
+                  }
+                },
+                "x-designable-id": "qnd8folb6bj",
+                "x-index": 5
+              },
+              "facultyG": {
+                "type": "string | number",
+                "title": "Faculty G",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "Excelent",
+                    "value": "Excelent"
+                  },
+                  {
+                    "children": [],
+                    "label": "Very Good",
+                    "value": "Very Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Good",
+                    "value": "Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Poor",
+                    "value": "Poor"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "margin": "0px 0px 0px 10px"
+                  }
+                },
+                "x-decorator-props": {
+                  "labelAlign": "left",
+                  "layout": "vertical",
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column"
+                  }
+                },
+                "name": "facultyG",
+                "required": true,
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.year",
+                      "name": "year"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.ysmjxdr5zt5.branch",
+                      "name": "branch"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.name",
+                      "name": "name"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.year===\"TY\" && $deps.branch===\"Ai&ds\"}}"
+                    }
+                  }
+                },
+                "x-designable-id": "1ql9sitq0tx",
+                "x-index": 6
+              },
+              "facultyH": {
+                "type": "string | number",
+                "title": "Faculty H",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "Excelent",
+                    "value": "Excelent"
+                  },
+                  {
+                    "children": [],
+                    "label": "Very Good",
+                    "value": "Very Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Good",
+                    "value": "Good"
+                  },
+                  {
+                    "children": [],
+                    "label": "Poor",
+                    "value": "Poor"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "margin": "0px 0px 0px 10px"
+                  }
+                },
+                "x-decorator-props": {
+                  "labelAlign": "left",
+                  "layout": "vertical",
+                  "style": {
+                    "display": "flex",
+                    "flexDirection": "column"
+                  }
+                },
+                "name": "facultyH",
+                "required": true,
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.year",
+                      "name": "year"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.ysmjxdr5zt5.branch",
+                      "name": "branch"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.name",
+                      "name": "name"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.year===\"B.Tech\" && $deps.branch===\"Ai&ds\"}}"
+                    }
+                  }
+                },
+                "x-designable-id": "h7oth5lut72",
+                "x-index": 7
+              }
+            }
+          },
+          "hwqlrpzp9pj": {
+            "type": "void",
+            "x-component": "Card",
+            "x-component-props": {
+              "title": ""
+            },
+            "x-designable-id": "hwqlrpzp9pj",
+            "x-index": 2,
+            "properties": {
+              "Suggestion": {
+                "type": "string",
+                "title": "Suggestion",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {
+                  "style": {
+                    "padding": "0% 0% 0% 0%"
+                  },
+                  "maxLength": 255
+                },
+                "x-decorator-props": {
+                  "colon": false,
+                  "layout": "vertical",
+                  "labelAlign": "left"
+                },
+                "name": "Suggestion",
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.aowreih5624.year",
+                      "name": "year"
+                    },
+                    {
+                      "property": "value",
+                      "type": "any",
+                      "source": "lb7jgzq87em.75znk4s84vg.ysmjxdr5zt5.branch",
+                      "name": "branch"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.branch && $deps.year}}",
+                      "display": "{{($deps.branch && $deps.year)?\"visible\":\"none\"}}"
+                    }
+                  }
+                },
+                "x-designable-id": "oqgh9jyvf2b",
+                "x-index": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "x-designable-id": "8f8z2a5xyjz"
+  }
+}
