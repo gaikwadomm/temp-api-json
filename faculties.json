@@ -1,113 +1,52 @@
-[{
+{
+    "faculties": [
+    {
     "faculty_id": 1,
     "name": "Faculty A",
-    "departments": [
-        {
-        "department_id": 101,
-        "name": "Department of Physics"
-        },
-        {
-        "department_id": 102,
-        "name": "Department of Chemistry"
-        }
-    ]
+        "branch": "Ai&ds",
+        "year": "FY"
 },
 {
     "faculty_id": 2,
     "name": "Faculty B",
-    "departments": [
-        {
-        "department_id": 201,
-        "name": "Department of History"
-        },
-        {
-        "department_id": 202,
-        "name": "Department of Literature"
-        }
-    ]
+    "branch": "Ai&ds",
+    "year": "SY"
 },
 {
     "faculty_id": 3,
     "name": "Faculty C",
-    "departments": [
-        {
-        "department_id": 301,
-        "name": "Department of Mechanical Engineering"
-        },
-        {
-        "department_id": 302,
-        "name": "Department of Electrical Engineering"
-        }
-    ]
+    "branch": "Ai&ds",
+    "year": "TY"
 },
 {
     "faculty_id": 4,
     "name": "Faculty D",
-    "departments": [
-        {
-        "department_id": 401,
-        "name": "Department of Surgery"
-        },
-        {
-        "department_id": 402,
-        "name": "Department of Pediatrics"
-        }
-    ]
+    "branch": "Ai&ds",
+    "year": "B.Tech"
 },
 {
     "faculty_id": 5,
     "name": "Faculty E",
-    "departments": [
-        {
-        "department_id": 501,
-        "name": "Department of Marketing"
-        },
-        {
-        "department_id": 502,
-        "name": "Department of Finance"
-        }
-    ]
+    "branch": "Coms",
+    "year": "FY"
 },
 {
     "faculty_id": 6,
     "name": "Faculty F",
-    "departments": [
-        {
-        "department_id": 601,
-        "name": "Department of Criminal Law"
-        },
-        {
-        "department_id": 602,
-        "name": "Department of Corporate Law"
-        }
-    ]
+    "branch": "Coms",
+    "year": "SY"
 },
 {
     "faculty_id": 7,
     "name": "Faculty G",
-    "departments": [
-        {
-        "department_id": 701,
-        "name": "Department of Curriculum Studies"
-        },
-        {
-        "department_id": 702,
-        "name": "Department of Educational Psychology"
-        }
-    ]
+    "branch": "Coms",
+    "year": "TY"
 },
 {
     "faculty_id": 8,
     "name": "Faculty H",
-    "departments": [
-        {
-        "department_id": 801,
-        "name": "Department of Sociology"
-        },
-        {
-        "department_id": 802,
-        "name": "Department of Political Science"
-        }
-    ]
+    "branch": "Coms",
+    "year": "B.Tech"
 }
 ]
+}
